@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="index1.css">
 </head>
 <body>
+    <!-- hello bca -->
     <div class="container">
         <div class="card">
             <img class="background" src="otherpic/poster1.jpeg" alt="Game Poster">
