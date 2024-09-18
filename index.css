@@ -1,0 +1,643 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif;
+}
+
+/* header.php */
+.header_navbar{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 30px;
+    
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 22px;
+
+}
+ul li a:hover{
+    background: rgb(145, 141, 141);
+}
+.header_mainbox{
+    /* background: rgb(37, 37, 37); */
+    background: rgb(38, 105, 230);
+    max-height: 70px;
+}
+.header_searchbox{
+    padding-left: 50px;
+    display: flex;
+}
+.search_logo{
+    flex: 1;
+}
+.search_box{
+    width: 500px;
+    height: 30px;
+}
+.header_logo{
+    padding-left: 20px;
+}
+.rating_pro{
+    color: yellow;
+}
+.btnlogin{
+    background: #c7bbbb;
+    font-size: 20px;
+    width: 90px;
+    cursor: pointer;
+}
+.btnlogin:hover{
+    background: lightgreen;
+}
+
+/* footer.php */
+.footer_mainbox{
+    background: rgb(87, 138, 233);
+    height: 200px;
+}
+.footer_firstbox{
+    text-align: center;
+    padding: 30px;
+}
+.footer_firstbox li a{
+    text-decoration: none;
+    color: black;
+    background: yellow;
+    padding: 7px;
+}
+.footer_secondbox{
+    color: black;
+    text-align: center;
+    padding: 50px;
+}
+
+
+/* index.php */
+.up_next{
+    color: red;
+    font-size: 20px;
+    margin-top: 40px;
+}
+.home_mainbox{
+    background: white;
+
+}
+.home_box{
+    display: flex;
+}
+.home_firstbox{
+    padding: 10px;
+}
+.home_firstbox img{
+    height: 530px;
+    width: 800px;
+}
+.home_second{
+    flex: 1;
+    /* text-align: right; */
+    margin-left: 20px;
+    margin-right: 30px;
+}
+.home_second-box{
+    /* background: rgb(19, 18, 18); */
+    background: rgb(185, 184, 184);
+    margin-top: 20px;
+}
+.home_second-box img{
+    padding: 10px;
+}
+
+/* watchlist.php */
+.watchlist_firstbox{
+    background: rgb(70, 69, 69);
+    height: 250px;
+}
+.watchlist_firstbox h1{
+    color: white;
+    margin-left: 40px;
+    padding-top: 40px;
+    font-size: 46px;
+}
+.watchlist_firstbox p{
+    color: white;
+    width: 1100px;
+    margin-left: 40px;
+    padding-top: 40px;
+    font-size: 15px;
+}
+.watchlist_secondbox table{
+    border: 2px solid rgb(214, 211, 211);
+    margin: 30px;
+    margin-left: 100px;
+    height: 150px;
+}
+.table_one{
+    display: flex;
+}
+.table_one_one{
+    flex: 1;
+    margin-top: 50px;
+    margin-left: 30px;
+}
+.watchlist_secondbox img{
+    margin: 15px;
+}
+.watchlist_secondbox{
+    display: flex;
+}
+.watchlist_secondbox_one{
+    flex: 1;
+    margin-left: 200px;
+    margin-top: 30px;
+}
+.watchlist_secondbox_one h1{
+     margin-left: 100px;
+}
+.watchlist_secondbox_one_one{
+    display: flex;
+}
+.watchlist_secondbox_one_a{
+    flex: 1;
+    height: 50px;
+}
+.watchlist_secondbox_one table{
+    height: 40px;
+    border: 2px solid rgb(214, 211, 211);
+    margin: 5px;
+    margin-left: 100px;
+}
+.watchlist_secondbox_one_one a{
+    text-decoration: none;
+    font-size: 9px;
+    margin-right: 40px;
+    margin-top: 25px;
+    color: rgb(70, 69, 69);
+}
+.watchlist_secondbox_one_two{
+    display: flex;
+}
+.watchlist_secondbox_one_two a{
+    text-decoration: none;
+    font-size: 9px;
+    margin-right: 61px;
+    margin-top: 25px;
+    color: rgb(70, 69, 69);
+}
+.watchlist_secondbox_one img{
+    margin: 5px;
+    height: 70px;
+}
+.watchlist_secondbox_one_three h1{
+    font-size: 26px;
+    color: #3063ee;
+}
+.watchlist_secondbox_one_three h2{
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+.watchlist_secondbox_one_three a{
+    text-decoration: none;
+}
+
+/* login.php  and signup.php*/
+section{
+    /* whole body background  signup and login*/
+     display: flex;
+     justify-content: center;
+     align-items: center; 
+    min-height: 100vh;
+    width: 100%;
+    background:white;
+    /* background-image: url(otherpic/backgroundimg.jpg); */
+}
+.loginform-box{
+/* second box maintaining */
+    position: relative;
+    width: 400px;
+    height: 450px;
+    /* background: rgb(82, 82, 165); */
+    background: cornflowerblue;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login_head{
+    font-size: 2em;
+    color: white;
+    text-align: center;
+}
+.logininputbox{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid white;
+}
+.logininputbox label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+input:valid ~ label,
+input:focus ~ label{
+    top: -12px;
+} 
+.logininputbox input{
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: white;
+}
+.logininputbox ion-icon{
+    position: absolute;
+    right: 8px;
+    color: white;
+    font-size: 1.2em;
+    top: 20px;
+}
+.loginforget{
+    margin: -15px 0 15px;
+    font-size: .9em;
+    color: white;
+    display: flex;
+    justify-content: center;
+}  
+.loginforget label input{
+    margin-right: 3px;
+}
+.loginforget label a{
+    color: white;
+    text-decoration: none;
+     font-weight: 600; 
+}
+.loginforget label a:hover{
+    text-decoration: underline;
+}
+.loginbtn{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+.loginregister{
+    font-size: .9em;
+    color: white;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+.loginregister p a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+.loginregister p a:hover{
+    text-decoration: underline;
+}
+
+.error-msg{
+    margin: 10px 0;
+    display: block;
+    background: crimson;
+    color: white;
+    border-radius: 5px;
+    font-size: 20px;
+text-align: center;
+}
+
+/* registration only box */
+.loginformbox{
+    position: relative;
+    width: 400px;
+    height: 600px;
+    background: cornflowerblue;
+    /* background-image: url(otherpic/backgroundimg.jpg); */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* aboutus.php */
+.aboutus_box{
+    background: rgb(214, 212, 212);
+    height: 40px;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+.span_home{
+    color: blue;
+    margin-left: 20px;
+}
+.aboutus_mainbox h1{
+    margin-left: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.aboutus_mainbox p{
+    font-size: 25px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 30px;
+    color: rgb(88, 87, 87);
+}
+
+/* profile.php */
+
+.profile_container{
+    position: relative;
+    background: #ebe9e9;
+    width: 100%;
+    height: 643px;
+}
+.profile_box{
+    background: white;
+    margin-top: 1rem;
+    border-radius: 7px;
+    height: 400px;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+}
+.profile_main_heading{
+    font-size: 35px;
+    text-align: center;
+    margin-top: 20px;
+    color: cornflowerblue;
+}
+.profile_box_one{
+    width: 600px;
+}
+.profile_heading{
+    font-size: 27px;
+    margin-left: 200px;
+    padding-top: 20px;
+}
+.profile_input_box{
+    margin-left: 150px;
+    margin-top: 30px;
+}
+.information{
+    font-size: 20px;
+    font-weight: bold;
+}
+.information_answer{
+    font-size:18px ;
+}
+.profile_change_password{
+    background: #3063ee;
+    color: white;
+    font-size: 17px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.Edit_profile{
+    background: #3063ee;
+    color: white;
+    font-size: 17px;
+    padding: 5px 50px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 30px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.profile_box_two{
+    margin-top: 10px;
+}
+.profile_my_orders{
+    /* margin-left: 462px; */
+    margin-left: 400px;
+    background: #3063ee;
+    color: white;
+    font-size: 17px;
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px 20px;
+}
+.profile_image{
+    margin-top: -10px;
+    margin-left: 160px;
+}
+.profile_pic_heading{
+    font-size: 25px;
+    margin-bottom: 15px;
+    margin-left: 35px;
+}
+.upload_profile{
+    background: #3063ee;
+    color: white;
+    font-size: 17px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 35px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* movies.php */
+.movie_mainbox{
+    margin-left: 20px;
+    display: grid;
+}
+.movie_box img{
+    height: 260px;
+}
+.movie_box h4{
+    color:white;
+    text-align: center;
+}
+.movie_box{
+    background: black;
+    width: 160px;
+    height: 380px;
+}
+.star_icon img{
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+}
+.movie_box_two{
+    text-align: center;
+    
+}
+
+/* newtailer.php */
+.container {
+    max-width: 1250px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.newtailer_body{
+    background: white;
+}
+.container h1 {
+    /* text-align: center; */
+    margin-bottom: 10px;
+    color: black;
+    margin-bottom: 30px;
+}
+.movie-list {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 1085px;
+    margin-left: 93px;
+    /* height: 400px; */
+}
+.movie {
+    flex: 0 0 auto;
+    width: 200px;
+    margin-right: 20px;
+    /* background-color: #333; */
+    background: #797878;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.movie img {
+    width: 100%;
+    /* height: auto; */
+    height: 200px;
+}
+
+.movie-info {
+    padding: 10px;
+}
+
+.movie-info h2 {
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.movie-info p {
+    margin: 5px 0;
+}
+
+.movie-info .rating {
+    display: flex;
+    align-items: center;
+}
+
+.movie-info .rating span {
+    margin-left: 5px;
+}
+.newtailer_buttons{
+    position: absolute;
+    margin-top: 10%;
+    width: 93%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+.newtailer_buttons  button {
+    background-color: #e94c4c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    pointer-events: all;
+
+}
+.newtailer_buttons  button:hover {
+    background-color: #c7bbbb;
+}
+.watchlist_btn{
+    background: rgb(226, 224, 224);
+    width: 110px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+.details_btn{
+    background: rgb(176, 176, 233);
+    width: 60px;
+    cursor: pointer;
+}
+
+/* details.php */
+.detail_image{
+    margin:30px;
+}
+
+.detail_container{
+    background: rgb(238, 235, 235);
+    margin: 30px;
+    border-radius: 20px;
+    display: flex;
+}
+.detail_second_box{
+    flex: 1;
+    margin-left: 50px;
+    margin-right: 100px;
+    margin-top: 30px;
+}
+.detail_first_box{
+ /* height: 450px; */
+ width: 400px;
+}
+.detail_add-to-watchlist-btn{
+    display: inline-block;
+    width: 200px;
+    padding: 8px 12px;
+    background-color: #3498DB;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+}
+.detail_add-to-watchlist-btn:hover {
+    background-color: #2980B9;
+}
+.detail_back{
+        display: inline-block; 
+        background-color: rgb(92, 89, 89);
+        width: 200px;
+        text-align: center;
+        color: #fff;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+       margin-left: 20px;
+       text-decoration: none;
+}
