@@ -255,7 +255,7 @@ td{
 
 
 .add_movie_main_container_body{
-    background-image: url(../otherpic/backgroundimg.jpg);
+    /* background-image: url(../otherpic/backgroundimg.jpg); */
 }
 .add_movie_main_container{
     background: rgba(100, 148, 237, 0.986);
@@ -263,16 +263,16 @@ td{
     width: 600px;
 
 }
-.inputboxone{
+/* .inputboxone{
     margin-left: 10px;
     background: gray;
     font-size: 18px;
     margin-top: 10px;
-}
+} */
 
 /* addcategory.php */
 .addmovietype_container_body{
-    background-image:url(../otherpic/backgroundimg.jpg) ;
+    /* background-image:url(../otherpic/backgroundimg.jpg) ; */
 }
 .addmovietype_container{
     background: rgba(100, 148, 237, 0.76);
@@ -322,3 +322,106 @@ td{
 .addmovietype_cancel_btn:hover{
     background: rgb(128, 17, 17);
 } 
+
+/* add_movies.php */
+.add_movies_header{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.add_movies_container{
+    background: rgb(100, 148, 237);
+    color: white;
+    height: 620px;
+    width: 600px;
+    margin-top: 10px;
+    margin-left: 26%;
+   
+}
+.add_movies_inputbox{
+    width: 250px;
+    margin-left: 30px;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 15px;
+}
+.inputboxone {
+    width: 42%;
+    padding: 10px;
+    font-size: 16px;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+}
+
+.dropdown {
+    position: relative;
+    width: 90%;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    color: black;
+    border: 1px solid #bbbaba;
+    min-width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content label {
+    display: block;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.dropdown-content label:hover {
+    background-color: #d4d4d4;
+    color: black;
+}
+
+.dropdown .dropbtn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    text-align: left;
+    background-color: white;
+}
+
+.dropdown .dropbtn:after {
+    content: '\25BC'; /* Downward arrow */
+    float: right;
+}
+
+.dropdown.active .dropdown-content {
+    display: block;
+}
+.add_movies_submit-button{
+    margin-top: 100px;
+    margin-left: 30px;
+    width: 50vh;
+    height: 50px;
+    font-size: 25px;
+    color: white;
+    background: lightgreen;
+}
+.add_movies_back{
+    display: inline-block;
+    background: red;
+    width: 180px;
+    text-align: center;
+    padding: 3px 24px;
+    font-size: 25px;
+    text-decoration: none;
+    margin-left: 30px;
+    color: white;
+    cursor: pointer;
+
+}

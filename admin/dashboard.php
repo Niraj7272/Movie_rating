@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../config.php';
 ?>
 
@@ -24,7 +25,7 @@ include '../config.php';
             </a>
            </li>
            <li>
-            <a href="profile.php">
+            <a href="../profile.php">
                 <!-- <i class="fas fa-user"></i> -->
                 <i><img src="../admin/icons/profile.png" class="side-icon"></i>
                 <span>Profile</span>
@@ -165,10 +166,10 @@ include '../config.php';
         <tr>
             <td><?php echo $i++; ?></td>
             <td><?php echo $row["user_id"]; ?></td>
-            <td><?php echo $row["fullname"]; ?></td>
+            <td><?php echo $row["full_name"]; ?></td>
             <td><?php echo $row["email"]; ?></td>
-            <td><?php echo $row["phone"]; ?></td>
-            <td><?php echo $row["dt"]; ?></td>
+            <td><?php echo $row["phone_number"]; ?></td>
+            <td><?php echo $row["created_at"]; ?></td>
         </tr>
           <?php 
           endforeach; 

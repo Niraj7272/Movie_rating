@@ -92,6 +92,7 @@
                 </div>
             </div>
         </div>
+        <a href="upcomming.php" class="see-more">See more</a>
     </div>
 
     <script>

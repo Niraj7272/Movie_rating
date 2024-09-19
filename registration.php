@@ -15,7 +15,7 @@ if(isset($_POST['submit'])){
     if(mysqli_num_rows($result)>0){
         $error[] = 'user already exist!';
     }else{
-        $insert = "INSERT INTO users(fullname, email, phone,password) VALUES ('$fname', '$email', '$phone', '$pass')";
+        $insert = "INSERT INTO users(full_name, email, phone_number,password) VALUES ('$fname', '$email', '$phone', '$pass')";
         mysqli_query($conn, $insert);
         header('location:login.php');
     }

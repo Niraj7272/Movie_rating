@@ -30,10 +30,10 @@ include 'config.php';
                 <li><a href="aboutus.php">About</a></li>
                 <?php
                     if(isset($_SESSION['user_type'])){
-                        if($_SESSION['user_type']== 'Admin'){
+                        if($_SESSION['user_type']== 'admin'){
                            echo'<li><a href="admin/dashboard.php">Admin</a></li>';
                         }else{
-                            echo'<li><a href="#">Profile</a></li>';
+                            echo'<li><a href="profile.php">Profile</a></li>';
                         }
                     }
                 ?>
