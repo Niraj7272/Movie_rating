@@ -4,14 +4,14 @@
     box-sizing: border-box;
 }
 
-body {
+.movies_body {
     font-family: Arial, sans-serif;
     /* background-color: #121212; */
     background-color: rgb(167, 165, 165);
     display: flex;
     justify-content: center;
     /* align-items: center; */
-    height: 100vh;
+    height: auto;
     color: white;
     
 }
@@ -41,6 +41,7 @@ body {
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease;
+    margin-top: 15px;
 }
 
 .card:hover {
@@ -98,21 +99,26 @@ body {
     opacity: 0;
 }
 .title{
-    color: rgb(4, 232, 248);
+    color: rgb(255, 1, 1);
+    margin-bottom: 8px;
 }
 .button-title{
     margin-left: 10px;
     opacity: 0;
-    background: rgb(92, 211, 92);
+    background: white;
     width: 100px;
     height: 30px;
     cursor: pointer;
     transform: translateX(100%);
     transition: opacity 0.5s, transform 0.5s;
-    color: white;
+    color: black;
     font-size: 18px;
 }
 .card:hover .button-title {
     opacity: 1;
     transform: translateX(0);
+}
+.movies_heading{
+    background:  rgb(167, 165, 165);
+    text-align: center;
 }

@@ -30,7 +30,7 @@ if (isset($_GET['details'])) {
         </div>
         <div class="detail_second_box">
             <embed src="<?php echo $fetch_data["movies_trailer"]; ?>" height="370px" width="800px" type="">
-           <h1><?php echo $fetch_data["title"]; ?></h1>
+           <h1><?php echo $fetch_data["title"]; ?><a href="rating.php?details=<?php echo $fetch_data['movie_id'] ?>" class="rate_me_btn">Rate</a></h1>
            <hr><br>
            <h3>Date Of Release: <?php echo $fetch_data["release_date"]; ?></h3><br>
             <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi nulla animi quidem eveniet, nihil ea sapiente modi possimus magni consectetur? Voluptatibus delectus adipisci aliquid repudiandae aspernatur in illo porro ab.</span><br><br>

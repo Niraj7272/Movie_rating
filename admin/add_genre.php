@@ -6,7 +6,7 @@ session_start();
 if(isset($_POST['add_movie_genre'])){
     $name = $_POST['name'];
 
-    $insert = "INSERT INTO genre(name) VALUES('$name')";
+    $insert = "INSERT INTO genres(genre_name) VALUES('$name')";
 
     mysqli_query($conn, $insert);
     header('location:login.php');

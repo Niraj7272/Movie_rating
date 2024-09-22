@@ -555,6 +555,17 @@ text-align: center;
 .movie-info .rating span {
     margin-left: 5px;
 }
+.rate_me_btn{
+    background: yellow;
+    width: 180px;
+    text-align: center;
+    padding: 2px 35px;
+    font-size: 20px;
+    text-decoration: none;
+    margin-left: 540px;
+    color: black;
+    cursor: pointer;
+}
 .newtailer_buttons{
     position: absolute;
     margin-top: 10%;
