@@ -57,7 +57,7 @@ if (isset($_POST['submit_btn'])) {
             background: gray;
             margin-left: 400px;
             margin-right: 400px;
-            height: 350px;
+            height: 390px;
             margin-top: 100px;
             padding: 10px;
         }
@@ -80,8 +80,9 @@ if (isset($_POST['submit_btn'])) {
             width: fit-content;
             display: flex;
             justify-content: center;
-            margin-left: 130px;
+            margin-left: 190px;
             margin-top: 30px;
+            gap: 7px;
         }
 
         .rating input {
