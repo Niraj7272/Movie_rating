@@ -32,10 +32,10 @@ include '../config.php';
             </a>
            </li>
            <li>
-            <a href="productstable.php">
+            <a href="../movies.php">
             <!-- <i class="fa-solid fa-gift"></i> -->
-            <i><img src="../admin/icons/product.png" class="side-icon"></i>
-                <span>Products</span>
+            <i><img src="../admin/icons/movies.png" class="side-icon"></i>
+                <span>Movies</span>
             </a>
            </li>
            <li>
@@ -46,17 +46,24 @@ include '../config.php';
             </a>
            </li>
            <li>
-            <a href="order_table.php">
+            <a href="genre_table.php">
             <!-- <i class="fa-solid fa-truck"></i> -->
-            <i><img src="../admin/icons/order.png" class="side-icon"></i>
-                <span>Orders</span>
+            <i><img src="../admin/icons/addgenre.png" class="side-icon"></i>
+                <span>Add Genre</span>
             </a>
            </li>
            <li>
-            <a href="categorytable.php">
+            <a href="add_language.php">
             <!-- <i class="fa-sharp fa-solid fa-cart-plus"></i> -->
-            <i><img src="../admin/icons/add-category.png" class="side-icon"></i>
-                <span>Category</span>
+            <i><img src="../admin/icons/addlanguage.png" class="side-icon"></i>
+                <span>Add Language</span>
+            </a>
+           </li>
+           <li>
+            <a href="add_type.php">
+            <!-- <i class="fa-sharp fa-solid fa-cart-plus"></i> -->
+            <i><img src="../admin/icons/addtype.png" class="side-icon"></i>
+                <span>Add Type</span>
             </a>
            </li>
            
@@ -100,13 +107,17 @@ include '../config.php';
             <div class="payment-card light-purple">
                 <div class="card-header">
                     <div class="amount">
-                        <span class="title">Total Products</span>
+                        <span class="title">Total Movies</span>
                         <span class="amount-value">
-                        10   
+                        <?php
+                          $select_movies=mysqli_query($conn,"select * from `movies`")or die('query failed');
+                          $row_count=mysqli_num_rows($select_movies);
+                          echo $row_count ;
+                         ?>
                         </span>
                     </div>
                     <!-- <i class="fa-solid fa-gift icon dark-purple"></i> -->
-                    <img src="../admin/icons/product.png" class="icon dark-purple">
+                    <img src="../admin/icons/film.png" class="icon dark-purple">
                 </div>
                 
             </div>
@@ -114,13 +125,13 @@ include '../config.php';
             <div class="payment-card light-green">
                 <div class="card-header">
                     <div class="amount">
-                        <span class="title">Total Orders</span>
+                        <span class="title">Total Series</span>
                         <span class="amount-value">
-                        5  
+                        0
                         </span>
                     </div>
                     <!-- <i class="fa-solid fa-truck icon dark-green"></i> -->
-                    <img src="../admin/icons/order.png" class="icon dark-green">
+                    <img src="../admin/icons/movie.png" class="icon dark-green">
                 </div>
                 
             </div>
@@ -128,13 +139,17 @@ include '../config.php';
             <div class="payment-card light-blue">
                 <div class="card-header">
                     <div class="amount">
-                        <span class="title">Catrgory</span>
+                        <span class="title">Genre</span>
                         <span class="amount-value">
-                        2     
+                        <?php
+                          $select_genre=mysqli_query($conn,"select * from `genres`")or die('query failed');
+                          $row_count=mysqli_num_rows($select_genre);
+                          echo $row_count ;
+                         ?>  
                         </span>
                     </div>
                     <!-- <i class="fa-solid fa-chart-line icon dark-blue"></i> -->
-                    <img src="../admin/icons/category.png" class="icon dark-blue">
+                    <img src="../admin/icons/addgenre.png" class="icon dark-blue">
                 </div>
                 
             </div>

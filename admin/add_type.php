@@ -29,7 +29,7 @@ if(isset($_POST['add_movie_type'])){
          <h1 class="addmovietype_heading">Add Movies Types</h1>
          <input type="text" name="name" placeholder="Enter Movie Type" class="addmovietype_inputbox" required ><br>
          <input type="submit" class="addmovietype_btn" value="Add Movie Type" name="add_movie_type" >
-        <a href="" class="addmovietype_cancel_btn">Cancel</a>
+        <a href="type_table.php" class="addmovietype_cancel_btn">Cancel</a>
         </form>
     </div>
 </body>

@@ -132,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <br><br>
             <!-- Submit Button -->
             <input type="submit" value="Add Movie" class="add_movies_submit-button">
-            <a href="" class="add_movies_back">Back</a>
+            <a href="movies_table.php" class="add_movies_back">Back</a>
         </form>
     </div>
 

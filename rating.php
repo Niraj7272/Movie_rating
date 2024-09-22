@@ -4,7 +4,7 @@ include 'config.php'; // Include your database connection
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    echo "<script>alert('Please log in to rate the movie'); window.location.href='login.php';</script>";
+    echo "<script>alert('Please log in to rate the movie'); window.location.href='errorpage.php';</script>";
     exit();
 }
 

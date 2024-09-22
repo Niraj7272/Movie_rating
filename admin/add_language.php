@@ -29,7 +29,7 @@ if(isset($_POST['add_movie_language'])){
          <h1 class="addmovietype_heading">Add Movies Language</h1>
          <input type="text" name="name" placeholder="Enter Movie Language" class="addmovietype_inputbox" required ><br>
          <input type="submit" class="addmovietype_btn" value="Add Language" name="add_movie_language" >
-        <a href="" class="addmovietype_cancel_btn">Cancel</a>
+        <a href="language_table.php" class="addmovietype_cancel_btn">Cancel</a>
         </form>
     </div>
 </body>

@@ -657,3 +657,32 @@ text-align: center;
     margin-left: 94vh;
     font-size: 20px;
 }
+
+/* Scrollable vertical slider container */
+.review_slider_vertical {
+    display: flex;
+    flex-direction: column; /* Ensure the reviews are stacked vertically */
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: 150px; /* Adjust height as needed */
+    scroll-snap-type: y mandatory; /* Enable scroll snapping on the y-axis */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile devices */
+}
+
+/* Individual user review */
+.user_comment {
+    scroll-snap-align: start; /* Snap each review into place at the start */
+    min-height: 50%; /* Each review takes up full container height */
+    flex-shrink: 0; /* Prevent shrinking */
+    padding: 10px; /* Add padding for content inside */
+    box-sizing: border-box;
+    border: 1px solid #ddd; /* Optional styling for review box */
+}
+
+/* Profile image styling */
+.profile-circle {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Ensure the image fits within the circle */
+    margin-bottom: 10px; /* Space between image and text */
+}
