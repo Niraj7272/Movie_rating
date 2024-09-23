@@ -32,14 +32,14 @@ include '../config.php';
             </a>
            </li>
            <li>
-            <a href="../movies.php">
+            <a href="movies_table.php">
             <!-- <i class="fa-solid fa-gift"></i> -->
             <i><img src="../admin/icons/movies.png" class="side-icon"></i>
                 <span>Movies</span>
             </a>
            </li>
            <li>
-            <a href="userstable.php">
+            <a href="users_table.php">
             <!-- <i class="fa-solid fa-user-plus"></i> -->
             <i><img src="../admin/icons/add-user.png" class="side-icon"></i>
                 <span>Users</span>
@@ -53,14 +53,14 @@ include '../config.php';
             </a>
            </li>
            <li>
-            <a href="add_language.php">
+            <a href="language_table.php">
             <!-- <i class="fa-sharp fa-solid fa-cart-plus"></i> -->
             <i><img src="../admin/icons/addlanguage.png" class="side-icon"></i>
                 <span>Add Language</span>
             </a>
            </li>
            <li>
-            <a href="add_type.php">
+            <a href="type_table.php">
             <!-- <i class="fa-sharp fa-solid fa-cart-plus"></i> -->
             <i><img src="../admin/icons/addtype.png" class="side-icon"></i>
                 <span>Add Type</span>
@@ -70,7 +70,7 @@ include '../config.php';
            <li class="logout">
             <?php
                if(isset($_SESSION['user_type'])){
-             echo'<a href="logout.php" onclick="return confirm(\'You Are Sure You Want To Logout?\');">
+             echo'<a href="../logout.php" onclick="return confirm(\'You Are Sure You Want To Logout?\');">
              <i><img src="../admin/icons/log-out.png" class="side-icon"></i>
                 <span>Logout</span>
             </a>';

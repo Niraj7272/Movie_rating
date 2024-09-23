@@ -43,7 +43,7 @@ $fetch_user=mysqli_fetch_assoc($select_user);
             </a>
            </li>
            <li>
-            <a href="userstable.php">
+            <a href="users_table.php">
             <!-- <i class="fa-solid fa-user-plus"></i> -->
             <i><img src="../admin/icons/add-user.png" class="side-icon"></i>
                 <span>Users</span>
@@ -135,7 +135,7 @@ $fetch_user=mysqli_fetch_assoc($select_user);
             <td>0</td>
             <td><img src="movies_poster/<?php echo $row["movies_poster"]; ?>" height="100px"></td>
             <td>
-                <a href="category_delete.php?delete=<?php echo $row['language_id']?>" 
+                <a href="movies_delete.php?delete=<?php echo $row['movie_id']?>" 
                 class="delete_product_btn" onclick="return confirm('Are you sure you want to delete');">
                 <i class="fas fa-trash"></i></a>
 

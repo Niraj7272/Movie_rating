@@ -43,7 +43,7 @@ include 'config.php';
           <?php
         }
       } else {
-        echo "<div class='empty_text'>No products Available</div>";
+        echo "<div class='empty_text'>No Movies Available</div>";
       }
       ?>
     </div>

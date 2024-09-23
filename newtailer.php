@@ -37,7 +37,14 @@ include 'config.php';
                                     <span>8.4</span>
                                 </div>
                                 <p><?php echo $fetch_product["release_date"]; ?></p>
-                                <button name="watchlist_btn" class="watchlist_btn"><b>+ </b> Watchlist</button>
+                                <!-- <button name="watchlist_btn" class="watchlist_btn"><b>+ </b> Watchlist</button> -->
+                                <?php
+                        if(isset($_SESSION['user_id'])){?>
+                            <button type="submit" class="watchlist_btn" name="add_to_watchlist"><b>+ </b> Watchlist</button>
+
+                       <?php }else{?>
+                        <button onclick="alert('Login To Continue')" type="submit" class="watchlist_btn"><b>+ </b> Watchlist</button>
+                      <?php }?>
                                 <a href='details.php?details=<?php echo $fetch_product['movie_id'] ?>'><button type="button"
                   class="details_btn" name="details">Details</button></a>
                             </div>
@@ -46,7 +53,7 @@ include 'config.php';
                     <?php
                 }
             } else {
-                echo "<div class='empty_text'>No products Available</div>";
+                echo "<div class='empty_text'>No Movies Available</div>";
             }
             ?>
         </div>

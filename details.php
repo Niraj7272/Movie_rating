@@ -42,7 +42,7 @@ $comment_result = mysqli_query($conn, $comment_query);
             <div class="detail_first_box">
                 <img src="admin/movies_poster/<?php echo $fetch_data["movies_poster"]; ?>" height="500px" width="400px"
                     class="detail_image">
-                <h3>Rating: <?php echo $average_rating; ?> / 5</h3>
+                <h3 class="avg_rating">Rating: <?php echo $average_rating; ?> / 5</h3>
                 <!-- Display User Comments and Profile Images -->
                 <div class="comment_section">
                     <h2>User Reviews</h2>
@@ -63,9 +63,6 @@ $comment_result = mysqli_query($conn, $comment_query);
                         echo "<p>No user reviews available for this movie.</p>";
                     }
                     ?>
-
-
-
                 </div>
             </div>
             <div class="detail_second_box">
@@ -78,8 +75,14 @@ $comment_result = mysqli_query($conn, $comment_query);
                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi nulla animi quidem eveniet,
                     nihil ea sapiente modi possimus magni consectetur? Voluptatibus delectus adipisci aliquid
                     repudiandae aspernatur in illo porro ab.</span><br><br>
-                <button onclick="alert('Login To Continue')" type="submit" class="detail_add-to-watchlist-btn">Add To
-                    Watchlist</button>
+                    <?php
+                        if(isset($_SESSION['user_id'])){?>
+                            <button type="submit" class="detail_add-to-watchlist-btn" name="add_to_watchlist">Add To Watchlist</button>
+
+                       <?php }else{?>
+                        <button onclick="alert('Login To Continue')" type="submit" class="detail_add-to-watchlist-btn">Add To Watchlist</button>
+                      <?php }?>
+                
                 <a href="index.php" class="detail_back">Back</a>
 
             </div>

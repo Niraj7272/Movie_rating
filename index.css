@@ -91,7 +91,7 @@ ul li a:hover{
 .up_next{
     color: red;
     font-size: 20px;
-    margin-top: 40px;
+    margin-top: 5px;
 }
 .home_mainbox{
     background: white;
@@ -105,22 +105,22 @@ ul li a:hover{
 }
 .home_firstbox img{
     height: 530px;
-    width: 800px;
+    width: 900px;
 }
 .home_second{
     flex: 1;
-    /* text-align: right; */
     margin-left: 20px;
     margin-right: 30px;
 }
 .home_second-box{
-    /* background: rgb(19, 18, 18); */
     background: rgb(185, 184, 184);
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .home_second-box img{
     padding: 10px;
 }
+
+
 
 /* watchlist.php */
 .watchlist_firstbox{
@@ -467,6 +467,56 @@ text-align: center;
     cursor: pointer;
 }
 
+/* edit_profile.php */
+.edit_profile_input_box{
+    margin-left: 350px;
+    padding: 2rem;
+}
+
+/* changepassword.php */
+.profile_input_field{
+    text-align: center;
+    height: 35px;
+    width: 400px;
+    border-radius: 5px solid white;
+} 
+.profile_label{
+    font-size: 18px;
+}
+.change_password_profile_box{
+    background: white;
+    border-radius: 7px;
+    height: 400px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.change_password_input_box{
+    margin-left: 350px;
+    padding: 3rem;
+}
+.save_password{
+    background: #3063ee;
+    color: white;
+    font-size: 17px;
+    padding: 5px 50px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+.Back_profile{
+    background: #3063ee;
+    color: white;
+    font-size: 17px;
+    padding: 5px 50px;
+    border: none;
+    border-radius: 5px;
+    margin-left: 30px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 /* movies.php */
 .movie_mainbox{
     margin-left: 20px;
@@ -685,4 +735,11 @@ text-align: center;
     border-radius: 50%; /* Circular image */
     object-fit: cover; /* Ensure the image fits within the circle */
     margin-bottom: 10px; /* Space between image and text */
+}
+
+.avg_rating{
+    margin-left: 30px;
+}
+.comment_section{
+    margin-left: 30px;
 }

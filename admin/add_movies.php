@@ -11,7 +11,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $release_date = mysqli_real_escape_string($conn, $_POST['releasedate']);
     $type_id = mysqli_real_escape_string($conn, $_POST['type']);
     $language_id = mysqli_real_escape_string($conn, $_POST['language']);
-    $poster = $_FILES['poster'];
+    $poster1 = $_FILES['poster1'];
+    $poster2 = $_FILES['poster2'];
+    
     // Get the YouTube link and convert it to embed format
     $youtube_url = mysqli_real_escape_string($conn, $_POST['trailer']);
 
@@ -23,33 +25,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $embed_url = "https://www.youtube.com/embed/" . $video_id;
 
-
-
-    if ($_FILES["poster"]["error"] === 4) {
-        echo
-            "<script> alert('poster Does Not Exist'); </script>";
+    // Check if both posters are uploaded
+    if ($_FILES["poster1"]["error"] === 4 && $_FILES["poster2"]["error"] === 4) {
+        echo "<script> alert('Posters Do Not Exist'); </script>";
     } else {
-        $fileName = $_FILES["poster"]["name"];
-        $fileSize = $_FILES["poster"]["size"];
-        $tmpName = $_FILES["poster"]["tmp_name"];
+        $fileName1 = $_FILES["poster1"]["name"];
+        $fileName2 = $_FILES["poster2"]["name"];
+        $fileSize1 = $_FILES["poster1"]["size"];
+        $fileSize2 = $_FILES["poster2"]["size"];
+        $tmpName1 = $_FILES["poster1"]["tmp_name"];
+        $tmpName2 = $_FILES["poster2"]["tmp_name"];
 
         $validImageExtension = ['jpg', 'jpeg', 'png'];
-        $imageExtension = explode('.', $fileName);
-        $imageExtension = strtolower(end($imageExtension));
-        if (!in_array($imageExtension, $validImageExtension)) {
-            echo
-                "<script> alert('Invalid Poster Extension'); </script>";
-        } else if ($fileSize > 1000000) {
-            echo
-                "<script>alert('Poster Size Is Too Large'); </script>";
-        } else {
-            $newImageName = uniqid();
-            $newImageName .= '.' . $imageExtension;
+        $imageExtension1 = strtolower(pathinfo($fileName1, PATHINFO_EXTENSION));
+        $imageExtension2 = strtolower(pathinfo($fileName2, PATHINFO_EXTENSION));
 
-            move_uploaded_file($tmpName, 'movies_poster/' . $newImageName);
+        if (!in_array($imageExtension1, $validImageExtension) || !in_array($imageExtension2, $validImageExtension)) {
+            echo "<script> alert('Invalid Poster Extension'); </script>";
+        } else if ($fileSize1 > 1000000 || $fileSize2 > 1000000) {
+            echo "<script>alert('Poster Size Is Too Large'); </script>";
+        } else {
+            // Generate unique names for the images
+            $newImageName1 = uniqid() . '.' . $imageExtension1;
+            $newImageName2 = uniqid() . '.' . $imageExtension2;
+
+            // Move the uploaded images to the designated folder
+            move_uploaded_file($tmpName1, 'movies_poster/' . $newImageName1);
+            move_uploaded_file($tmpName2, 'movies_poster/' . $newImageName2);
+
             // Insert the movie into the movies table
-            $insert_movie = "INSERT INTO `movies` (`title`, `release_date`, `language_id`, `type_id`, `movies_poster`, `movies_trailer`) 
-            VALUES ('$movie_name', '$release_date', '$language_id', '$type_id', '$newImageName', '$embed_url ' )";
+            $insert_movie = "INSERT INTO `movies` (`title`, `release_date`, `language_id`, `type_id`, `movies_poster`, `poster2`, `movies_trailer`) 
+            VALUES ('$movie_name', '$release_date', '$language_id', '$type_id', '$newImageName1', '$newImageName2', '$embed_url')";
+
             if (mysqli_query($conn, $insert_movie)) {
                 $movie_id = mysqli_insert_id($conn); // Get the last inserted movie_id
 
@@ -57,16 +64,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if (isset($_POST['genres'])) {
                     foreach ($_POST['genres'] as $genre_id) {
                         $insert_genre = "INSERT INTO `movie_genres` (`movie_id`, `genre_id`) 
-                VALUES ('$movie_id', '$genre_id')";
+                        VALUES ('$movie_id', '$genre_id')";
                         mysqli_query($conn, $insert_genre);
                     }
                 }
-                echo
-                    "<script> alert('Movie added successfully!'); </script>";
+                echo "<script> alert('Movie added successfully!'); </script>";
             } else {
                 echo "Error: " . mysqli_error($conn);
             }
-
         }
     }
 }
@@ -114,7 +119,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
                 ?>
             </select>
-            <input name="poster" class="add_movies_inputbox" type="file">
+
+            <!-- Upload posters -->
+            <input name="poster1" class="add_movies_inputbox" type="file"><br>
+            <input name="poster2" class="add_movies_inputbox" type="file">
+
+            <!-- YouTube trailer link -->
             <input type="url" name="trailer" class="add_movies_inputbox" placeholder="Enter YouTube Video URL" required>
 
             <!-- Custom Genre Multi-select Dropdown -->

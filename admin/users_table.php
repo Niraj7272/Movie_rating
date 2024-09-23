@@ -74,7 +74,7 @@ $fetch_user=mysqli_fetch_assoc($select_user);
            <li class="logout">
             <?php
                if(isset($_SESSION['user_type'])){
-             echo'<a href="logout.php" onclick="return confirm(\'You Are Sure You Want To Logout?\');">
+             echo'<a href="../logout.php" onclick="return confirm(\'You Are Sure You Want To Logout?\');">
              <i><img src="../admin/icons/log-out.png" class="side-icon"></i>
                 <span>Logout</span>
             </a>';
@@ -133,7 +133,7 @@ $fetch_user=mysqli_fetch_assoc($select_user);
             <td><?php echo $row["created_at"]; ?></td>
             <td><img src="profile/<?php echo $row["profile_image"]; ?>" height="100px"></td>
             <td>
-                <a href="category_delete.php?delete=<?php echo $row['user_id']?>" 
+                <a href="users_delete.php?delete=<?php echo $row['user_id']?>" 
                 class="delete_product_btn" onclick="return confirm('Are you sure you want to delete');">
                 <i class="fas fa-trash"></i></a>
 
