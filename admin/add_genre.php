@@ -9,7 +9,7 @@ if(isset($_POST['add_movie_genre'])){
     $insert = "INSERT INTO genres(genre_name) VALUES('$name')";
 
     mysqli_query($conn, $insert);
-    header('location:login.php');
+    header('location:genre_table.php');
 } else {
     echo " ";
     }

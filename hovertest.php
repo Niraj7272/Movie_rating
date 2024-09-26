@@ -1,116 +1,112 @@
-<?php
-session_start();
-include 'config.php';
-
-// Fetch movies from the database
-$query = "SELECT * FROM movies LIMIT 5"; // Fetch 5 movies for example
-$result = $conn->query($query);
-$movies = [];
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        $movies[] = $row;
-    }
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <!-- <link rel="stylesheet" href="index.css"> -->
+    <title>No Longer Allowed In Another World</title>
     <style>
-        body {
-            margin: 0;
-            overflow: hidden; /* Prevents scrollbars */
-        }
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
 
-        .background-slider {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1; /* Sends it to the back */
-        }
+body {
+    background: linear-gradient(90deg, #151532 0%, #2e2240 100%);
+    color: #fff;
+    padding: 50px;
+}
 
-        .background-slider img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures the image covers the entire area */
-            position: absolute;
-            animation: slide 20s infinite; /* Change duration for speed */
-        }
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+}
 
-        @keyframes slide {
-            0% { opacity: 1; }
-            20% { opacity: 1; }
-            25% { opacity: 0; }
-            95% { opacity: 0; }
-            100% { opacity: 1; }
-        }
+.spotlight {
+    color: #ff85b0;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
 
-        .content {
-            position: absolute;
-            top: 65%;
-            left: 10%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-        }
+h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
 
-        .poster {
-            margin-top: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-        }
+.details {
+    font-size: 16px;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
 
-        .poster img {
-            width: 200px; /* Size of the small poster */
-            height: auto;
-        }
+.detail-icon {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    background-color: #ff85b0;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #d96f90;
+}
+
+.watch-now {
+    background-color: #ff85b0;
+}
+
+.detail {
+    background-color: #8b6eae;
+}
     </style>
 </head>
 <body>
-    <div class="background-slider">
-        <?php foreach ($movies as $movie): ?>
-            <img src="admin/movies_poster/<?php echo htmlspecialchars($movie['movies_poster'], ENT_QUOTES, 'UTF-8'); ?>" alt="">
-        <?php endforeach; ?>
-    </div>
-
-    <div class="content">
-        <div class="poster">
-            <img src="admin/movies_poster/<?php echo !empty($movies) ? htmlspecialchars($movies[0]['movies_poster'], ENT_QUOTES, 'UTF-8') : 'hovervideos/default.jpg'; ?>" alt="">
-            <h1><?php echo !empty($movies) ? htmlspecialchars($movies[0]['title'], ENT_QUOTES, 'UTF-8') : 'Movie Title'; ?></h1>
-            <p><?php echo !empty($movies) ? htmlspecialchars($movies[0]['release_date'], ENT_QUOTES, 'UTF-8') : 'Movie Description'; ?></p>
+    <div class="container">
+        <div class="spotlight">#1 Spotlight</div>
+        <h1>No Longer Allowed In Another World</h1>
+        <div class="details">
+            <span class="detail-icon">📺</span> <span>23m</span>
+            <span class="detail-icon">📅</span> <span>Jul 9, 2024</span>
+            <span class="detail-icon">HD</span>
+            <span class="detail-icon">🔊</span> <span>12</span>
+            <span class="detail-icon">🔍</span> <span>9</span>
+            <span class="detail-icon">🔞</span> <span>12</span>
+        </div>
+        <p class="description">
+            An adventure in another world with cute girls by your side and video game-like powers—sounds like an anime fan's dream, right? Not so for melancholic author Osamu Dazai, who would quite literally prefer to drop dead. Video games haven't even been invented yet when he gets yanked into another world in 1948...
+        </p>
+        <div class="buttons">
+            <button class="watch-now">Watch Now</button>
+            <button class="detail">Detail</button>
         </div>
     </div>
-
-    <script>
-        const movieTitles = [
-            <?php foreach ($movies as $movie): ?>
-                "<?php echo htmlspecialchars($movie['title'], ENT_QUOTES, 'UTF-8'); ?>",
-            <?php endforeach; ?>
-        ];
-
-        const movieDescriptions = [
-            <?php foreach ($movies as $movie): ?>
-                "<?php echo htmlspecialchars($movie['description'], ENT_QUOTES, 'UTF-8'); ?>",
-            <?php endforeach; ?>
-        ];
-
-        let currentIndex = 0;
-
-        function changeContent() {
-            currentIndex = (currentIndex + 1) % movieTitles.length;
-            document.querySelector('.poster img').src = "admin/movies_poster/" + moviePosters[currentIndex];
-            document.querySelector('.poster h1').textContent = movieTitles[currentIndex];
-            document.querySelector('.poster p').textContent = movieDescriptions[currentIndex];
-        }
-
-        setInterval(changeContent, 4000); // Change content every 4 seconds
-    </script>
 </body>
 </html>

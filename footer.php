@@ -19,7 +19,7 @@
             
         </div>
         <div class="footer_secondbox">
-            2023 Copyright © Rating Pro.@Niraj Chaudhary.
+            2023 Copyright © Rating Pro.@Niraj Chaudhary & @Ankit Tamang.
         </div>
         
     </div>

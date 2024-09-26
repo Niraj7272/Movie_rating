@@ -1,6 +1,18 @@
 <?php
 session_start();
 include 'config.php';
+$where = "";
+
+if (isset($_GET['search']) && !empty($_GET['search'])) {
+    $search = mysqli_real_escape_string($conn, $_GET['search']);
+    $where = "WHERE title LIKE '%$search%'";
+} 
+$select_movies = "SELECT * FROM movies $where" ;
+$fetch_movies = mysqli_query($conn, $select_movies);
+
+// Fetch all movies
+$select_products = mysqli_query($conn, "SELECT * FROM movies ORDER BY movie_id DESC");
+
 
 // Fetch movies from the database
 $query = "SELECT * FROM movies";

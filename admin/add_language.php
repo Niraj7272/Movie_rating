@@ -9,7 +9,7 @@ if(isset($_POST['add_movie_language'])){
     $insert = "INSERT INTO language(language_title) VALUES('$name')";
 
     mysqli_query($conn, $insert);
-    header('location:login.php');
+    header('location:language_table.php');
 } else {
     echo " ";
     }

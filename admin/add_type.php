@@ -9,7 +9,7 @@ if(isset($_POST['add_movie_type'])){
     $insert = "INSERT INTO type(type_title) VALUES('$name')";
 
     mysqli_query($conn, $insert);
-    header('location:login.php');
+    header('location:type_table.php');
 } else {
     echo " ";
     }
