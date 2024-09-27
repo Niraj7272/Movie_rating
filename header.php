@@ -20,7 +20,7 @@ include 'config.php';
             </div>
             <div class="header_searchbox">
                 <form method="GET" action="movies.php">
-                    <input class="search_box" type="search" name="search" required placeholder="Search Movies"
+                    <input class="search_box" type="search" name="search" placeholder="Search Movies"
                         value="<?php echo isset($_GET['search']) ? htmlspecialchars($_GET['search']) : ''; ?>">
                     <button class="" type="submit">Search</button>
                 </form>

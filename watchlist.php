@@ -1,79 +1,77 @@
+<?php
+include 'config.php';
+session_start();
+
+
+//removing selected item
+if (isset($_GET['remove'])) {
+    $remove_id = $_GET['remove'];
+    mysqli_query($conn, "Delete from `watchlist` where watchlist_id=$remove_id");
+    header('location:watchlist.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Watchlist page</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
+
 <body>
     <?php
-        include 'header.php';
+    include 'header.php';
+    $user_id = $_SESSION["user_id"];
     ?>
     <div class="watchlist_mainbox">
         <div class="watchlist_firstbox">
             <h1>Your Watchlist</h1>
-            <p>Your Watchlist is the place to track the titles you want to watch. You can sort your Watchlist by the IMDb rating, popularity score and arrange your titles in the order you want to see them.</p>
+            <p>Your Watchlist is the place to track the titles you want to watch. You can sort your Watchlist by the
+                IMDb rating, popularity score and arrange your titles in the order you want to see them.</p>
         </div>
         <div class="watchlist_secondbox">
             <div class="watchlist_secondbox_table">
                 <table style="width:110%">
-                    <tr>
-                         <td class="table_one">
-                            <img src="hovervideos/one.jpg" alt="" width="150px">
-                            <h3 class="table_one_one">
-                                House Of The Dragon<br>
-                                2022  20 eps  TV-MA
-                            </h3>
-                        </td>
-                         <td>View Delete</td>
-                    </tr>
-                </table>
-                <table style="width:110%">
-                    <tr>
-                         <td class="table_one">
-                            <img src="hovervideos/one.jpg" alt="" width="150px">
-                            <h3 class="table_one_one">
-                                House Of The Dragon<br>
-                                2022  20 eps  TV-MA
-                            </h3>
-                        </td>
-                         <td>View Delete</td>
-                    </tr>
+                    <?php
+                    // Modified SQL query to exclude the non-existent rating column
+                    $select_movies = mysqli_query($conn, "SELECT w.watchlist_id, w.user_id, w.movie_id, m.title AS movie_title, m.release_date, m.movies_poster AS image FROM watchlist w JOIN movies m ON w.movie_id = m.movie_id WHERE w.user_id = '$user_id'");
+
+                    if (mysqli_num_rows($select_movies) > 0) {
+                        while ($fetch_movies = mysqli_fetch_assoc($select_movies)) {
+                            ?>
+                            <tr>
+                                <td class="table_one">
+                                    <img src="admin/movies_poster/<?php echo $fetch_movies['image']; ?>" alt="" width="100px">
+                                    <h3 class="table_one_one">
+                                        <?php echo $fetch_movies['movie_title']; ?><br>
+                                        <?php echo $fetch_movies['release_date']; ?>
+                                    </h3>
+                                    <div class="watclist_action">
+                                        <a href="details.php?details=<?php echo $fetch_movies['movie_id']; ?>" class="view_watchlist_btn"><i class="fa-solid fa-eye"></i></a>  |
+                                        <a href="watchlist.php?remove=<?php echo $fetch_movies['watchlist_id'] ?>"
+                                            class="delete_watchlist_btn"
+                                            onclick="return confirm('Are you sure you want to delete');">
+                                            <i class="fas fa-trash"></i></a>
+                                    </div>
+                                </td>
+                            </tr>
+                            <?php
+
+                        }
+                    } else {
+                        echo "<div class='watchlist_empty_text'>Your Watchlist Is Empty</div>";
+                    }
+                    ?>
                 </table>
             </div>
-                <div class="watchlist_secondbox_one">
-                    <h1>More To Explore.</h1>
-            
-                    <table style="width:70%">
-                    <tr>
-                         <td class="watchlist_secondbox_one_one">
-                            <a href="watchlist.php"><h1>Your Watchlist</h1></a>
-                            <img src="hovervideos/one.jpg" alt="" width="30px" class="watchlist_secondbox_one_a">
-                        </td>
-                    </tr>
-                </table>
-                <table style="width:70%">
-                    <tr>
-                         <td class="watchlist_secondbox_one_two">
-                            <a href="myrating.php"><h1>Your Rating</h1></a>
-                            <img src="hovervideos/one.jpg" alt="" width="30px" class="watchlist_secondbox_one_a">
-                        </td>
-                    </tr>
-                </table><br><br><br>
-                <table style="width:70%">
-                    <tr>
-                         <td class="watchlist_secondbox_one_three">
-                            <h1>Feedback</h1>
-                            <a href=""><h2>Tell what you think about this feature.</h2></a>
-                        </td>
-                    </tr>
-                </table><br>
-                </div>
         </div>
     </div>
     <?php
-        include 'footer.php';
+    include 'footer.php';
     ?>
 </body>
+
 </html>

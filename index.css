@@ -124,7 +124,7 @@ ul li a:hover{
 
 /* watchlist.php */
 .watchlist_firstbox{
-    background: rgb(70, 69, 69);
+    background: rgba(70, 69, 69, 0.747);
     height: 250px;
 }
 .watchlist_firstbox h1{
@@ -132,19 +132,53 @@ ul li a:hover{
     margin-left: 40px;
     padding-top: 40px;
     font-size: 46px;
+    animation: bounce 1.5s infinite;
 }
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-40px);
+    }
+  }
 .watchlist_firstbox p{
     color: white;
     width: 1100px;
     margin-left: 40px;
     padding-top: 40px;
     font-size: 15px;
+    animation: bounce 1.5s infinite;
 }
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-40px);
+    }
+  }
 .watchlist_secondbox table{
-    border: 2px solid rgb(214, 211, 211);
+    /* border: 2px solid rgb(214, 211, 211); */
     margin: 30px;
-    margin-left: 100px;
-    height: 150px;
+    margin-left: 200px;
+    
+}
+.watchlist_secondbox td{
+    border: 2px solid rgb(129, 128, 128);
+}
+.watclist_action{
+    margin: 75px;
+}
+.delete_watchlist_btn{
+    color: red;
+    margin-left: 20px;
+    font-size: 20px;
+}
+.view_watchlist_btn{
+    color: green;
+    font-size: 20px;
+    margin-right: 20px;
 }
 .table_one{
     display: flex;
@@ -160,61 +194,25 @@ ul li a:hover{
 .watchlist_secondbox{
     display: flex;
 }
-.watchlist_secondbox_one{
-    flex: 1;
-    margin-left: 200px;
-    margin-top: 30px;
-}
-.watchlist_secondbox_one h1{
-     margin-left: 100px;
-}
-.watchlist_secondbox_one_one{
-    display: flex;
-}
-.watchlist_secondbox_one_a{
-    flex: 1;
-    height: 50px;
-}
-.watchlist_secondbox_one table{
-    height: 40px;
-    border: 2px solid rgb(214, 211, 211);
-    margin: 5px;
-    margin-left: 100px;
-}
-.watchlist_secondbox_one_one a{
-    text-decoration: none;
-    font-size: 9px;
-    margin-right: 40px;
-    margin-top: 25px;
-    color: rgb(70, 69, 69);
-}
-.watchlist_secondbox_one_two{
-    display: flex;
-}
-.watchlist_secondbox_one_two a{
-    text-decoration: none;
-    font-size: 9px;
-    margin-right: 61px;
-    margin-top: 25px;
-    color: rgb(70, 69, 69);
-}
-.watchlist_secondbox_one img{
-    margin: 5px;
-    height: 70px;
-}
-.watchlist_secondbox_one_three h1{
-    font-size: 26px;
-    color: #3063ee;
-}
-.watchlist_secondbox_one_three h2{
-    font-size: 15px;
-    text-align: center;
-    text-decoration: none;
-}
-.watchlist_secondbox_one_three a{
-    text-decoration: none;
-}
+.watchlist_empty_text{
+    /* color: red;
+    font-size: 35px;
+    margin-left: 450px; */
 
+      font-size: 35px;
+      color: red;
+      animation: bounce 1.5s infinite;
+      margin-left: 450px;
+      margin-top: 50px;
+}
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-40px);
+    }
+  }
 /* login.php  and signup.php*/
 section{
     /* whole body background  signup and login*/
@@ -743,3 +741,4 @@ text-align: center;
 .comment_section{
     margin-left: 30px;
 }
+

@@ -1,6 +1,37 @@
 <?php
+error_reporting(0);
+session_start();
 include 'config.php';
+
+if(isset($_SESSION['user_id'])){
+    $user_id = $_SESSION['user_id'];
+}else{
+
+}
+
+
+if (isset($_POST['add_to_watchlist'])) {
+    $movie_id = $_POST['movie_id'];
+   
+
+    // Select watchlist data based on condition
+    $select_watchlist = mysqli_query($conn, "SELECT * FROM `watchlist` WHERE movie_id='$movie_id' AND user_id='$user_id'");
+    
+    if (mysqli_num_rows($select_watchlist) > 0) {
+        echo "<script type='text/javascript'>alert('Movie already added to watchlist')</script>";
+    } else {
+        // Insert movie data into watchlist table
+        $insert_movies = mysqli_query($conn, "INSERT INTO `watchlist` (movie_id, user_id) VALUES ('$movie_id', '$user_id')");
+        if ($insert_movies) {
+            echo "<script type='text/javascript'>alert('Movie added to Watchlist Successfully')</script>";
+        } else {
+            echo "<script type='text/javascript'>alert('Failed to add movie to watchlist')</script>";
+        }
+    }
+}
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,6 +71,13 @@ include 'config.php';
                                     <span><?php echo $average_rating; ?> / 5</span>
                                 </div>
                                 <p><?php echo $fetch_product["release_date"]; ?></p>
+                                <input type="hidden" name="movie_id" value="<?php echo $fetch_product["movie_id"]; ?>">
+                                <input type="hidden" name="movie_title" value="<?php echo $fetch_product["title"]; ?>">
+                                <input type="hidden" name="movie_rating" value="><?php echo $average_rating; ?>">
+                                <input type="hidden" name="movie_release" value="<?php echo $fetch_product["release_date"]; ?>">
+                                <input type="hidden" name="movie_poster" value="<?php echo $fetch_product["movies_poster"]; ?>">
+
+
                                 
                                 <?php if (isset($_SESSION['user_id'])) { ?>
                                     <button type="submit" class="watchlist_btn" name="add_to_watchlist"><b>+ </b> Watchlist</button>

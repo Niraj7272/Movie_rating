@@ -47,7 +47,7 @@ body{
 }
 .menu li:hover,
 .active{
-    background: #e0e0e058;
+    background: #e0e0e065;
 }
 .menu a{
     color: white;

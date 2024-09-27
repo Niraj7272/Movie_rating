@@ -13,7 +13,6 @@ $fetch_movies = mysqli_query($conn, $select_movies);
 
 // Fetch all movies
 $select_products = mysqli_query($conn, "SELECT * FROM movies $where ORDER BY movie_id DESC");
-
 ?>
 
 <!DOCTYPE html>

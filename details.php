@@ -3,11 +3,35 @@ session_start();
 include "config.php";
 $details_id = $_GET['details'];
 
+if(isset($_SESSION['user_id'])){
+    $user_id = $_SESSION['user_id'];
+}else{
+
+}
+
 if (isset($_GET['details'])) {
     $details_id = $_GET['details'];
     $query = mysqli_query($conn, "select * from `movies` WHERE movie_id=$details_id");
     if (mysqli_num_rows($query) > 0) {
         $fetch_data = mysqli_fetch_assoc($query);
+    }
+}
+
+if (isset($_POST['add_to_watchlist'])) {   
+
+    // Select watchlist data based on condition
+    $select_watchlist = mysqli_query($conn, "SELECT * FROM `watchlist` WHERE movie_id='$details_id' AND user_id='$user_id'");
+    
+    if (mysqli_num_rows($select_watchlist) > 0) {
+        echo "<script type='text/javascript'>alert('Movie already added to watchlist')</script>";
+    } else {
+        // Insert movie data into watchlist table
+        $insert_movies = mysqli_query($conn, "INSERT INTO `watchlist` (movie_id, user_id) VALUES ('$details_id', '$user_id')");
+        if ($insert_movies) {
+            echo "<script type='text/javascript'>alert('Movie added to Watchlist Successfully')</script>";
+        } else {
+            echo "<script type='text/javascript'>alert('Failed to add movie to watchlist')</script>";
+        }
     }
 }
 
@@ -89,6 +113,7 @@ $comment_result = mysqli_query($conn, $comment_query);
         </div>
     </form>
     <?php
+    include 'recommendation.php';
     include 'footer.php';
     ?>
 
