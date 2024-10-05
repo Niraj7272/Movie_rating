@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $language_id = mysqli_real_escape_string($conn, $_POST['language']);
     $poster1 = $_FILES['poster1'];
     $poster2 = $_FILES['poster2'];
+    $movie_summery = mysqli_real_escape_string($conn, $_POST['movie_summery']);
     
     // Get the YouTube link and convert it to embed format
     $youtube_url = mysqli_real_escape_string($conn, $_POST['trailer']);
@@ -60,8 +61,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             move_uploaded_file($tmpName2, 'movies_poster/' . $newImageName2);
 
             // Insert the movie into the movies table
-            $insert_movie = "INSERT INTO `movies` (`title`, `release_date`, `language_id`, `type_id`, `movies_poster`, `poster2`, `movies_trailer`) 
-            VALUES ('$movie_name', '$release_date', '$language_id', '$type_id', '$newImageName1', '$newImageName2', '$embed_url')";
+            $insert_movie = "INSERT INTO `movies` (`title`, `release_date`, `language_id`, `type_id`, `movies_poster`, `poster2`,`movie_summery`, `movies_trailer`) 
+            VALUES ('$movie_name', '$release_date', '$language_id', '$type_id', '$newImageName1', '$newImageName2','$movie_summery', '$embed_url')";
 
             if (mysqli_query($conn, $insert_movie)) {
                 $movie_id = mysqli_insert_id($conn); // Get the last inserted movie_id
@@ -143,7 +144,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     }
                     ?>
                 </div>
-            </div>
+            </div><br>
+            <textarea name="movie_summery" id="description" cols="64" rows="3" placeholder="Product Description" class="suggestionbox"></textarea>
+
 
             <br><br>
             <!-- Submit Button -->

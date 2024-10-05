@@ -400,7 +400,7 @@ td{
     display: block;
 }
 .add_movies_submit-button{
-    margin-top: 100px;
+    margin-top: 40px;
     margin-left: 30px;
     width: 50vh;
     height: 50px;
@@ -420,6 +420,10 @@ td{
     color: white;
     cursor: pointer;
 
+}
+.suggestionbox{
+    margin-left: 30px;
+    width: 535px;
 }
 
 /* movies_table.php  pagination section */

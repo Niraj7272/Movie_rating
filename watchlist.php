@@ -34,8 +34,7 @@ if (isset($_GET['remove'])) {
     <div class="watchlist_mainbox">
         <div class="watchlist_firstbox">
             <h1>Your Watchlist</h1>
-            <p>Your Watchlist is the place to track the titles you want to watch. You can sort your Watchlist by the
-                IMDb rating, popularity score and arrange your titles in the order you want to see them.</p>
+            <p>Your Watchlist is the place to track the titles you want to watch. You can sort your Watchlist by the popularity score and arrange your titles in the order you want to see them.</p>
         </div>
         <div class="watchlist_secondbox">
             <div class="watchlist_secondbox_table">

@@ -108,9 +108,7 @@ while ($row = mysqli_fetch_assoc($genre_query)) {
                 <hr><br>
                 <h3>Genre:  <?php echo implode(', ', $genres);?></h3>
                 <h3>Date Of Release: <?php echo $fetch_data["release_date"]; ?></h3><br>
-                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi nulla animi quidem eveniet,
-                    nihil ea sapiente modi possimus magni consectetur? Voluptatibus delectus adipisci aliquid
-                    repudiandae aspernatur in illo porro ab.</span><br><br>
+                <span><?php echo $fetch_data["movie_summery"]; ?></span><br><br>
                     <?php
                         if(isset($_SESSION['user_id'])){?>
                             <button type="submit" class="detail_add-to-watchlist-btn" name="add_to_watchlist">Add To Watchlist</button>

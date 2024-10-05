@@ -74,7 +74,7 @@ ul li a:hover{
     text-align: center;
     padding: 30px;
 }
-.footer_firstbox li a{
+.footer_firstbox a{
     text-decoration: none;
     color: black;
     background: yellow;
@@ -85,6 +85,7 @@ ul li a:hover{
     text-align: center;
     padding: 50px;
 }
+
 
 
 /* index.php */
@@ -127,7 +128,9 @@ ul li a:hover{
 }
 
 
-
+.loram{
+    color: white;
+}
 
 .overlay-image {
     margin-right: 1200px;
@@ -149,13 +152,22 @@ ul li a:hover{
     position: absolute;
     bottom: 0;
     width: 1059px;
-    background:  rgba(0, 0, 0, 0.575); /* Black transparent color */
+    background:  rgba(0, 0, 0, 0.719); /* Black transparent color */
     padding: 20px;
     margin-left: 240px;
-    height: 100px;
+    height: 190px;
     text-align: center;
+    margin-bottom: 35px;
 }
-
+.watch_trailer_button{
+    background-color: yellow;
+    font-size: 20px;
+    margin: 10px;
+    padding: 5px;
+}
+.watch_trailer_button a{
+    text-decoration: none;
+}
 /* Movie title in white */
 .title-overlay h2 {
     color: white;
@@ -784,3 +796,16 @@ text-align: center;
     margin-left: 30px;
 }
 
+
+/* watch_trailer.php */
+.watch_trailer_box_one{
+height: 80vh;
+}
+.watch_trailer_back_button{
+    background-color: rgb(71, 71, 71);
+    font-size: 20px;
+    color: white;
+    padding: 8px;
+    margin-left: 1280px;
+    text-decoration: none;
+}

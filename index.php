@@ -13,7 +13,6 @@ $fetch_movies = mysqli_query($conn, $select_movies);
 // Fetch all movies
 $select_products = mysqli_query($conn, "SELECT * FROM movies ORDER BY movie_id DESC");
 
-
 // Fetch movies from the database
 $query = "SELECT * FROM movies";
 $result = $conn->query($query);
@@ -68,15 +67,23 @@ if ($result->num_rows > 0) {
                     <h2 id="movieTitle">
                         <?php echo !empty($movies) ? htmlspecialchars($movies[0]['title'], ENT_QUOTES, 'UTF-8') : 'No Movie Title'; ?>
                     </h2>
+                    <span class="loram" id="movie_summery">
+                        <?php echo !empty($movies) ? htmlspecialchars($movies[0]['movie_summery'], ENT_QUOTES, 'UTF-8') : 'No Movie Title'; ?>
+                    </span><br>
+                    <a id="watchTrailerButton" href='watch_trailer.php?details=<?php echo $movies[0]['movie_id'] ?>'>
+                        <button type="button" class="watch_trailer_button" name="details">Watch Trailer</button>
+                    </a>
                 </div>
             </div>
             <script>
                 const moviePosters = [
                     <?php foreach ($movies as $movie): ?>
-                        {
+                            {
                             background: "admin/movies_poster/<?php echo htmlspecialchars($movie['poster2'], ENT_QUOTES, 'UTF-8'); ?>",
                             poster: "admin/movies_poster/<?php echo htmlspecialchars($movie['movies_poster'], ENT_QUOTES, 'UTF-8'); ?>",
-                            title: "<?php echo htmlspecialchars($movie['title'], ENT_QUOTES, 'UTF-8'); ?>"
+                            title: "<?php echo htmlspecialchars($movie['title'], ENT_QUOTES, 'UTF-8'); ?>",
+                            movie_summery:  "<?php echo htmlspecialchars($movie['movie_summery'], ENT_QUOTES, 'UTF-8'); ?>",
+                            id: "<?php echo htmlspecialchars($movie['movie_id'], ENT_QUOTES, 'UTF-8'); ?>"
                         },
                     <?php endforeach; ?>
                 ];
@@ -95,13 +102,17 @@ if ($result->num_rows > 0) {
                     // Update the movie title
                     document.getElementById("movieTitle").innerText = currentMovie.title;
 
+                    // Update the movie summery
+                    document.getElementById("movie_summery").innerText = currentMovie.movie_summery;
+
+                    // Update the trailer link
+                    document.getElementById("watchTrailerButton").href = `watch_trailer.php?details=${currentMovie.id}`;
+
                     currentIndex = (currentIndex + 1) % moviePosters.length;
                 }
 
                 setInterval(changeImage, 4000);
             </script>
-
-
 
         </div>
     </div>

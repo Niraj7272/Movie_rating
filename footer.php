@@ -13,13 +13,13 @@
                 if(isset($_SESSION['email'])){
                     echo '';
                 }else{
-                    echo '<li><a href="login.php">Sign in for more access</a></li>';
+                    echo '<a href="login.php">Sign in for more access</a>';
                 }
             ?>
             
         </div>
         <div class="footer_secondbox">
-            2023 Copyright © Rating Pro.@Niraj Chaudhary & @Ankit Tamang.
+            2024 Copyright © Rating Pro.@Niraj Chaudhary & @Ankit Tamang.
         </div>
         
     </div>
