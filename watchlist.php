@@ -2,6 +2,11 @@
 include 'config.php';
 session_start();
 
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    echo "<script>alert('404! PAGE NOT FOUND'); window.location.href='login.php';</script>";
+    exit();
+}
 
 //removing selected item
 if (isset($_GET['remove'])) {

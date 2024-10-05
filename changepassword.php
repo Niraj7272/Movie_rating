@@ -3,6 +3,12 @@ session_start();
 include "config.php";
 $user_id=$_SESSION["user_id"];
 
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    echo "<script>alert('404! PAGE NOT FOUND'); window.location.href='login.php';</script>";
+    exit();
+}
+
 if(isset($_POST['change-password'])) {
     $new_password = $_POST['new_password'];
     $confirm_password = $_POST['confirm_password'];

@@ -2,6 +2,12 @@
 session_start();
 require '../config.php';
 
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    echo "<script>alert('404! PAGE NOT FOUND'); window.location.href='../login.php';</script>";
+    exit();
+}
+
 // Fetch all genres
 $select_genres = mysqli_query($conn, "SELECT * FROM `genres`");
 

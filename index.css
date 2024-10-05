@@ -102,10 +102,16 @@ ul li a:hover{
 }
 .home_firstbox{
     padding: 10px;
+    height: 540px;
+    width: 1400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
 .home_firstbox img{
-    height: 530px;
-    width: 900px;
+    /* height: 1000px;
+    width: 1329px; */
 }
 .home_second{
     flex: 1;
@@ -120,6 +126,42 @@ ul li a:hover{
     padding: 10px;
 }
 
+
+
+
+.overlay-image {
+    margin-right: 1200px;
+    width: 100px;
+    height: 100px;
+    margin-top: 248px;
+    margin-left: 20px;
+}
+
+.overlay-image img {
+    width: 220px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+/* Black transparent overlay at the bottom */
+.title-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 1059px;
+    background:  rgba(0, 0, 0, 0.575); /* Black transparent color */
+    padding: 20px;
+    margin-left: 240px;
+    height: 100px;
+    text-align: center;
+}
+
+/* Movie title in white */
+.title-overlay h2 {
+    color: white;
+    font-size: 40px;
+    margin: 0;
+}
 
 
 /* watchlist.php */

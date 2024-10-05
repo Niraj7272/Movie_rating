@@ -1,6 +1,12 @@
 <?php
 session_start();
 include '../config.php';
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    echo "<script>alert('404! PAGE NOT FOUND'); window.location.href='../login.php';</script>";
+    exit();
+}
 ?>
 
 <!DOCTYPE html>

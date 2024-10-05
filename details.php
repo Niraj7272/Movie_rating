@@ -46,6 +46,17 @@ $comment_query = "SELECT u.full_name, u.profile_image, r.comment, r.rating, r.ra
                   JOIN users u ON r.user_id = u.user_id
                   WHERE r.movie_id = $details_id AND r.comment IS NOT NULL AND r.comment != ''";
 $comment_result = mysqli_query($conn, $comment_query);
+
+//fetching genre
+$genre_query = mysqli_query($conn, "SELECT g.genre_name FROM genres g 
+                                    JOIN movie_genres mg ON g.genre_id = mg.genre_id 
+                                    WHERE mg.movie_id = $details_id");
+$genres = [];
+while ($row = mysqli_fetch_assoc($genre_query)) {
+    $genres[] = $row['genre_name'];
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -95,6 +106,7 @@ $comment_result = mysqli_query($conn, $comment_query);
                         href="rating.php?details=<?php echo $fetch_data['movie_id'] ?>" class="rate_me_btn">Rate</a>
                 </h1>
                 <hr><br>
+                <h3>Genre:  <?php echo implode(', ', $genres);?></h3>
                 <h3>Date Of Release: <?php echo $fetch_data["release_date"]; ?></h3><br>
                 <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi nulla animi quidem eveniet,
                     nihil ea sapiente modi possimus magni consectetur? Voluptatibus delectus adipisci aliquid
@@ -107,7 +119,7 @@ $comment_result = mysqli_query($conn, $comment_query);
                         <button onclick="alert('Login To Continue')" type="submit" class="detail_add-to-watchlist-btn">Add To Watchlist</button>
                       <?php }?>
                 
-                <a href="index.php" class="detail_back">Back</a>
+                <a href="javascript:history.back()" class="detail_back">Back</a>
 
             </div>
         </div>

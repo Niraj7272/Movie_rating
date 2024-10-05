@@ -38,7 +38,7 @@ if (isset($_POST['add_to_watchlist'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top 10 this week</title>
+    <title>All Movies</title>
     <link rel="stylesheet" href="index.css">
 </head>
 

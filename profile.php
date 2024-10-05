@@ -3,6 +3,12 @@ session_start();
 include 'config.php';
 $user_id=$_SESSION["user_id"];
 
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    echo "<script>alert('404! PAGE NOT FOUND'); window.location.href='login.php';</script>";
+    exit();
+}
+
 $select_user=mysqli_query($conn,"Select * from `users` WHERE user_id='$user_id'");
 mysqli_num_rows($select_user);
 $fetch_user=mysqli_fetch_assoc($select_user);

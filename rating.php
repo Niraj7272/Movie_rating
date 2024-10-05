@@ -20,7 +20,7 @@ if (isset($_POST['submit_btn'])) {
 
     // Validate: Ensure a rating has been selected
     if (!isset($rating) || empty($rating)) {
-        echo "<script>alert('Please select a rating'); window.location.href='rating_page.php';</script>";
+        echo "<script>alert('Please select a rating'); window.location.href='rating.php?details=$movie_id';</script>";
         exit();
     }
 

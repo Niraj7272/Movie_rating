@@ -78,7 +78,7 @@ if (isset($_SESSION['user_id'])) {
             }
             ?>
         </div>
-        <a href="movies.php" class="see-more">See more</a>
+        <a href="mostpopular_all.php" class="see-more">See more</a>
     </div>
 
     <script>
