@@ -14,7 +14,7 @@ $select_user = mysqli_query($conn, "SELECT * FROM `users` WHERE user_id='$user_i
 $fetch_user = mysqli_fetch_assoc($select_user);
 
 // Pagination Logic
-$records_per_page = 5;  // Number of records per page
+$records_per_page = 5;  
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $start_from = ($page - 1) * $records_per_page;
 

@@ -110,10 +110,7 @@ ul li a:hover{
     background-repeat: no-repeat;
     position: relative;
 }
-.home_firstbox img{
-    /* height: 1000px;
-    width: 1329px; */
-}
+
 .home_second{
     flex: 1;
     margin-left: 20px;
@@ -152,7 +149,7 @@ ul li a:hover{
     position: absolute;
     bottom: 0;
     width: 1059px;
-    background:  rgba(0, 0, 0, 0.719); /* Black transparent color */
+    background:  rgba(0, 0, 0, 0.63); /* Black transparent color */
     padding: 20px;
     margin-left: 240px;
     height: 190px;
@@ -164,6 +161,7 @@ ul li a:hover{
     font-size: 20px;
     margin: 10px;
     padding: 5px;
+    cursor: pointer;
 }
 .watch_trailer_button a{
     text-decoration: none;
@@ -186,32 +184,32 @@ ul li a:hover{
     margin-left: 40px;
     padding-top: 40px;
     font-size: 46px;
-    animation: bounce 1.5s infinite;
+    /* animation: bounce 1.5s infinite; */
 }
-@keyframes bounce {
+/* @keyframes bounce {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
       transform: translateY(-40px);
     }
-  }
+  } */
 .watchlist_firstbox p{
     color: white;
     width: 1100px;
     margin-left: 40px;
     padding-top: 40px;
     font-size: 15px;
-    animation: bounce 1.5s infinite;
+    /* animation: bounce 1.5s infinite; */
 }
-@keyframes bounce {
+/* @keyframes bounce {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
       transform: translateY(-40px);
     }
-  }
+  } */
 .watchlist_secondbox table{
     /* border: 2px solid rgb(214, 211, 211); */
     margin: 30px;
@@ -255,18 +253,20 @@ ul li a:hover{
 
       font-size: 35px;
       color: red;
-      animation: bounce 1.5s infinite;
+      /* animation: bounce 1.5s infinite; */
       margin-left: 450px;
       margin-top: 50px;
 }
-@keyframes bounce {
+/* @keyframes bounce {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
       transform: translateY(-40px);
     }
-  }
+  } */
+
+  
 /* login.php  and signup.php*/
 section{
     /* whole body background  signup and login*/

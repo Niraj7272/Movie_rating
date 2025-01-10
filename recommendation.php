@@ -1,8 +1,7 @@
 <?php
-// Include the database connection file
 include 'config.php';
 
-// Get the current movie's ID from the query string (i.e., the movie whose details are being viewed)
+// Get the current movie's ID from the query (i.e., the movie whose details are being viewed)
 $current_movie_id = isset($_GET['details']) ? $_GET['details'] : 0;
 
 if (!$current_movie_id) {
